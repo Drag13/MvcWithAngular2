@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/WebProject/bin
+/WebProject/bin
+/WebProject/node_modules
+/WebProject/obj/Debug
+/packages
+/.vs
+/WebProject/ApplicationInsights.config
