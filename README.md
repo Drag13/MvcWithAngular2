@@ -124,3 +124,13 @@ bootstrap(AppComponent);</pre></li>
 </pre></li>
 <li>Press F5 to run your app. If you see My First Angular 2 App on your screen - all is ok. You can proceed developing.</li>
 </ol>
+
+<h3>Known pitfalls</h3>
+<ol>
+<li><strong>Problem: All package installing with errors</strong></li>
+Potential fix: Try command:  "npm cache clear". This will remove all cached before packages and allows you to get clean and fresh latest packages.
+
+<li><strong>Problem: VS throws compile error like: "TS2304: Cannot find name 'Map'"</strong></li>
+Potential fix: Change TypeScript ECMAscript version to 6 version. You can find it at Project properties, TypeScript compile options.
+
+
