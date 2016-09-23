@@ -146,4 +146,5 @@ Potential fix: Try command:  "npm cache clear". This will remove all cached befo
 <li><strong>Problem: VS throws compile error like: "TS2304: Cannot find name 'Map'"</strong></li>
 Potential fix: Change TypeScript ECMAscript version to 6 version. You can find it at Project properties, TypeScript compile options.
 
-<li> Problem: Nothing works at all. Try hard cache reset in Chrome. (This is not a joke, this can save a lot of time for you.)</li>
+<li><strong>Problem: Nothing works at all.<strong></li> 
+Potential fix: Try hard cache reset in Chrome. (This is not a joke, this can save a lot of time for you.)
