@@ -1,12 +1,63 @@
 # MvcWithAngular2
-<h1>This is web project configured for working with angular 2.0 RELEASE and Microsoft Visual Studio 2015</h1>
 
+<h1>This is web project configured for working with angular 2.0 RELEASE and Microsoft Visual Studio 2015</h1>
 Short instruction how to run angular 2 with MS Visual Studio
 
+This is web project configured for working with angular 2.0 and Microsoft Visual Studio 2015
+
+Short instruction how to run Angular 2 with MS Visual Studio
+
+<ol><li> Install NPM Task Runner and Package Installer.</li>
+
+<li> Run "updateNpm" command from your taskrunner. <strong>Even if you have last npm - do this. This is important. </strong>
+If you have already installed Node.js before skip this step. If not - go the Node.js and install latest version of node.js. 
+Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> External web tools and set a path to the propper node.js version. 
+Do not forget to move your new path up the hill.</li>
+
+<li> Run install command from the Task runner. Wait untill all packages will be installed.</li>
+
+<li> Configure typescript for Visual studio. Close your project and open .csproj file in the text editor. 
+Find PropertyGroup section and add two additional options:
+<pre>&#60;TypeScriptExperimentalDecorators&#62;true&#60;/TypeScriptExperimentalDecorators&#62;
+&#60;TypeScriptEmitDecoratorMetadata&#62;True&#60;/TypeScriptEmitDecoratorMetadata&#62;
+</pre></li>
+
+<li> Open your project properties and go to the TypeScript setting. Pick CommonJS as module system. </li>
+
+<li> Press F5 to run your app. If you see My First Angular 2 App on your screen - all is ok. You can proceed developing. </li></ol>
+
+<ol>
+<li><strong>Problem: All package installing with errors.</strong>
+<strong>Potential fix:</strong> Try command:  "npm cache clear". This will remove all cached before packages and allows you to get clean and fresh latest packages.</li>
+
+<li><strong>Problem: VS throws compile error like: "TS2304: Cannot find name 'Map'".</strong>
+<strong>Potential fix:</strong> Change TypeScript ECMAscript version to 6 version. You can find it at Project properties, TypeScript compile options.</li>
+
+<li><strong> Problem: Nothing works at all.</strong>
+<strong>Potential fix:</strong> Try hard cache reset in Chrome. (This is not a joke, this can save a lot of time for you.)</li> </ol>
+<strong>If you still have problems - try to install all from null.</strong>
+
+<h2>Installing Angular 2.0 Release version for MS Visual Studio 2015 from null.</h2>
 <ol>
 <li>Install NPM Task Runner and Package Installer.</li>
 <li>Create new empty web project.</li>
-<li>Check package json file. It should be like this
+<li>Add package.json file to the solution root with next content
+<pre>
+{
+    "name": "myproject",
+    "version": "1.0.0",
+    "devDependencies": {
+        },
+    "scripts": {
+        "updateNpm": "npm install npm@latest"
+    }
+} 
+</pre>
+</li>
+<li>Run "updateNpm" command from your taskrunner. <strong>Even if you have last npm - do this. This is important.</strong>
+If you have already installed Node.js before skip this step. If not - go the Node.js and install latest version of node.js.
+Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> External web tools and set a path to the propper node.js version. Do not forget to move your new path up the hill.</li>
+<li>Update your package json with dependencies, angular 2 needed. (With little overhead for the old browswers)
 <pre>
 {
   "name": "myproject",
@@ -43,16 +94,14 @@ Short instruction how to run angular 2 with MS Visual Studio
     "getNpmVersion": "npm -v",
     "getNodeVersion": "node -v"
   }
-} 
-</pre>
-</li>
-<li>Run "updateNpm" command from your taskrunner. <b>Even if you have last npm - do this. It is important.</b>
-If you have already installed Node.js before skip this step. If not - go the Node.js and install latest version of node.js.
-Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> External web tools and set a path to the propper node.js version. Do not forget to move your new path up the hill.</li>
+}</pre></li>
+
 <li>Run install command from the Task runner.</li>
 <li>Create app folder in the root of your solution. Add app.components.ts to the app folder.</li>
 <li>Configure typescript for Visual studio. Close your project and open .csproj file in the text editor. Find PropertyGroup section and add two additional options: 
-<TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators> <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata> </li>
+<pre>
+&#60;TypeScriptExperimentalDecorators&#62;true&#60;/TypeScriptExperimentalDecorators&#62;
+&#60;TypeScriptEmitDecoratorMetadata&#62;True&#60;/TypeScriptEmitDecoratorMetadata&#62;</pre>
 <li>Save changes and open solution.</li>
 <li>Open your project properties and go to the TypeScript setting. Pick CommonJS as module system.</li>
 <li>Update app.component.ts with this code.
@@ -126,13 +175,3 @@ export class AppModule { }
 <li>Press F5 to run your app. If you see My First Angular 2 App on your screen - all is ok. You can proceed developing.</li>
 </ol>
 
-<h3>Known pitfalls</h3>
-<ol>
-<li><strong>Problem: All package installing with errors</strong></li>
-Potential fix: Try command:  "npm cache clear". This will remove all cached before packages and allows you to get clean and fresh latest packages.
-
-<li><strong>Problem: VS throws compile error like: "TS2304: Cannot find name 'Map'"</strong></li>
-Potential fix: Change TypeScript ECMAscript version to 6 version. You can find it at Project properties, TypeScript compile options.
-
-<li><strong>Problem: Nothing works at all.</strong></li> 
-Potential fix: Try hard cache reset in Chrome. (This is not a joke, this can save a lot of time for you.)
