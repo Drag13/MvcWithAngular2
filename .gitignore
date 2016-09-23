@@ -9,3 +9,5 @@
 /packages
 /.vs
 /WebProject/ApplicationInsights.config
+/WebProject/app/app.module.js.map
+/WebProject/app/app.module.js
