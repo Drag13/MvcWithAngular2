@@ -1,5 +1,5 @@
 # MvcWithAngular2
-<h1>This is web project configured for working with angular 2.0 -rc 4 and Microsoft Visual Studio 2015</h1>
+<h1>This is web project configured for working with angular 2.0 RELEASE and Microsoft Visual Studio 2015</h1>
 
 Short instruction how to run angular 2 with MS Visual Studio
 
@@ -34,30 +34,31 @@ Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> Exter
   },
 
   "dependencies": {
-    "@angular/common": "2.0.0-rc.4",
-    "@angular/compiler": "2.0.0-rc.4",
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/forms": "0.2.0",
-    "@angular/http": "2.0.0-rc.4",
-    "@angular/platform-browser": "2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
-    "@angular/router": "3.0.0-beta.1",
-    "@angular/router-deprecated": "2.0.0-rc.2",
-    "@angular/upgrade": "2.0.0-rc.4",
-
-    "systemjs": "0.19.27",
-    "core-js": "^2.4.0",
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/router": "3.0.0",
+    "@angular/upgrade": "2.0.0",
+    "core-js": "^2.4.1",
     "reflect-metadata": "^0.1.3",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "^0.6.12",
-
-    "angular2-in-memory-web-api": "0.0.14"
-
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "0.19.27",
+    "zone.js": "^0.6.23",
+    "angular2-in-memory-web-api": "0.0.20",
+    "bootstrap": "^3.3.6"
   },
+
   "scripts": {
     "postinstall": "typings install",
     "typings": "typings",
-    }
+    "cmd": "npm typescript",
+    "getNpmVersion": "npm -v",
+    "getNodeVersion": "node -v"
+  }
 }</pre></li>
 
 <li>Run install command from the Task runner.</li>
@@ -73,12 +74,24 @@ import { Component } from '@angular/core';
     selector: 'my-app',
     template: 'My First Angular 2 App'
 })
-export class AppComponent { } </pre></li>
+export class AppComponent { }  </pre></li>
 
 <li>Add main.ts to the app folder.
 <pre>import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app.component';
 bootstrap(AppComponent);</pre></li>
+
+<li>Add app.module.ts near the main.ts with the following code 
+<pre>import { NgModule }      from '@angular/core';
+     import { BrowserModule } from '@angular/platform-browser';
+     import { AppComponent }   from './app.component';
+    @NgModule({
+        imports: [BrowserModule],
+        declarations: [AppComponent],
+        bootstrap: [AppComponent]
+})
+export class AppModule { }
+</pre></li>
 
 <li>Add index.html to the root of your project</li>
 
@@ -133,4 +146,4 @@ Potential fix: Try command:  "npm cache clear". This will remove all cached befo
 <li><strong>Problem: VS throws compile error like: "TS2304: Cannot find name 'Map'"</strong></li>
 Potential fix: Change TypeScript ECMAscript version to 6 version. You can find it at Project properties, TypeScript compile options.
 
-
+<li> Problem: Nothing works at all. Try hard cache reset in Chrome. (This is not a joke, this can save a lot of time for you.)</li>
