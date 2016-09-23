@@ -19,13 +19,13 @@ Do not forget to move your new path up the hill.</li>
 <li> Configure typescript for Visual studio. Close your project and open .csproj file in the text editor. 
 Find PropertyGroup section and add two additional options:
 <pre>&#60;TypeScriptExperimentalDecorators&#62;true&#60;/TypeScriptExperimentalDecorators&#62;
-&#60;TypeScriptEmitDecoratorMetadata&#62;True&#60;/TypeScriptEmitDecoratorMetadata&#62;
+&#60;TypeScriptEmitDecoratorMetadata&#62;true&#60;/TypeScriptEmitDecoratorMetadata&#62;
 </pre></li>
 
 <li> Open your project properties and go to the TypeScript setting. Pick CommonJS as module system. </li>
 
 <li> Press F5 to run your app. If you see My First Angular 2 App on your screen - all is ok. You can proceed developing. </li></ol>
-
+<strong> Known pitfalls </strong>
 <ol>
 <li><strong>Problem: All package installing with errors.</strong>
 <strong>Potential fix:</strong> Try command:  "npm cache clear". This will remove all cached before packages and allows you to get clean and fresh latest packages.</li>
@@ -101,7 +101,7 @@ Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> Exter
 <li>Configure typescript for Visual studio. Close your project and open .csproj file in the text editor. Find PropertyGroup section and add two additional options: 
 <pre>
 &#60;TypeScriptExperimentalDecorators&#62;true&#60;/TypeScriptExperimentalDecorators&#62;
-&#60;TypeScriptEmitDecoratorMetadata&#62;True&#60;/TypeScriptEmitDecoratorMetadata&#62;</pre>
+&#60;TypeScriptEmitDecoratorMetadata&#62;true&#60;/TypeScriptEmitDecoratorMetadata&#62;</pre>
 <li>Save changes and open solution.</li>
 <li>Open your project properties and go to the TypeScript setting. Pick CommonJS as module system.</li>
 <li>Update app.component.ts with this code.
@@ -174,4 +174,3 @@ export class AppModule { }
 </pre></li>
 <li>Press F5 to run your app. If you see My First Angular 2 App on your screen - all is ok. You can proceed developing.</li>
 </ol>
-
