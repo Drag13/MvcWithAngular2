@@ -114,9 +114,10 @@ import { Component } from '@angular/core';
 export class AppComponent { }  </pre></li>
 
 <li>Add main.ts to the app folder.
-<pre>import { bootstrap }    from '@angular/platform-browser-dynamic';
-import { AppComponent } from './app.component';
-bootstrap(AppComponent);</pre></li>
+<pre>import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule);</pre></li>
 
 <li>Add app.module.ts near the main.ts with the following code 
 <pre>import { NgModule }      from '@angular/core';
