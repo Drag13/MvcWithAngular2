@@ -6,23 +6,7 @@ Short instruction how to run angular 2 with MS Visual Studio
 <ol>
 <li>Install NPM Task Runner and Package Installer.</li>
 <li>Create new empty web project.</li>
-<li>Add package.json file to the solution root with next content
-<pre>
-{
-    "name": "myproject",
-    "version": "1.0.0",
-    "devDependencies": {
-        },
-    "scripts": {
-        "updateNpm": "npm install npm@latest"
-    }
-} 
-</pre>
-</li>
-<li>Run "updateNpm" command from your taskrunner. <b>Even if you have last npm - do this. It is important.</b>
-If you have already installed Node.js before skip this step. If not - go the Node.js and install latest version of node.js.
-Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> External web tools and set a path to the propper node.js version. Do not forget to move your new path up the hill.</li>
-<li>Update your package json with dependencies, angular 2 needed. (With little overhead for the old browswers)
+<li>Check package json file. It should be like this
 <pre>
 {
   "name": "myproject",
@@ -59,8 +43,12 @@ Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> Exter
     "getNpmVersion": "npm -v",
     "getNodeVersion": "node -v"
   }
-}</pre></li>
-
+} 
+</pre>
+</li>
+<li>Run "updateNpm" command from your taskrunner. <b>Even if you have last npm - do this. It is important.</b>
+If you have already installed Node.js before skip this step. If not - go the Node.js and install latest version of node.js.
+Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> External web tools and set a path to the propper node.js version. Do not forget to move your new path up the hill.</li>
 <li>Run install command from the Task runner.</li>
 <li>Create app folder in the root of your solution. Add app.components.ts to the app folder.</li>
 <li>Configure typescript for Visual studio. Close your project and open .csproj file in the text editor. Find PropertyGroup section and add two additional options: 
