@@ -9,14 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
+const app_security_service_1 = require('./app.security.service');
 let AppComponent = class AppComponent {
+    constructor(securityService) {
+        this.securityService = securityService;
+        this._securityService = securityService;
+    }
+    get SecurityInfo() { return this._securityInfo; }
+    GetSecurity() {
+        this._securityInfo = this._securityService.GetSecurity();
+    }
+    ngOnInit() {
+        this.GetSecurity();
+    }
 };
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: '<h1>My First Angular 2 App</h1>'
+        template: `<h1>My First Angular 2 App</h1>
+                <p>Hello user. You was authenticated with token: <span class="security-token">{{SecurityInfo.Token}}</span></p>
+                <p>All systems nominal </p>`,
+        providers: [app_security_service_1.SecurityService],
+        styles: ['.security-token{color:green}']
     }), 
-    __metadata('design:paramtypes', [])
+    __metadata('design:paramtypes', [app_security_service_1.SecurityService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
