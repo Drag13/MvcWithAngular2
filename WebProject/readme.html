@@ -1,0 +1,356 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Readme</title>
+    <style>
+        header {
+            text-align: center;
+        }
+
+        footer {
+            text-align: right;
+            font-size: 12px;
+        }
+
+        .code {
+            background-color: #f2f2f2;
+        }
+
+        h2:first-letter {
+            color: rgb(192, 0, 0);
+        }
+
+        .section {
+            font-size: 18px;
+        }
+
+            .section.contents {
+                font-size: 20px;
+            }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1> <font color="chucknorris">R</font>eadme!</h1>
+    </header>
+
+    <div class="section contents" id="contents">
+        <h2>
+            Contents
+        </h2>
+        <ol>
+            <li> <a href="#contents">Contents</a> </li>
+            <li> <a href="#abt">About</a> </li>
+            <li> <a href="#checklist">Checklist</a></li>
+            <li>
+                <a href="#trbl">Troubleshooting</a>
+                <ol>
+                    <li> <a href="#npm_lw">NPM version lower than 3</a></li>
+                    <li> <a href="#ndj_lw">Node.JS version lower than 5</a></li>
+                    <li> <a href="#inst_err">All package installing with errors.</a></li>
+                    <li> <a href="#cmpl_err">VS throws compile error</a></li>
+                    <li> <a href="#armgdn">Nothing works at all</a></li>
+                </ol>
+            </li>
+            <li> <a href="#frm_nll">Install application from null manually </a></li>
+        </ol>
+    </div>
+
+    <div class="section" id="abt">
+        <h2>About</h2>
+        This is the small web application developed to provide for you as much as possible pure angular 2 project working with MS Visual studio.
+        Hope this helps you.
+        Please, report a issue to the <a href="https://github.com/Drag13/MvcWithAngular2/issues/new">GitHub</a> if any
+    </div>
+
+    <div class="section" id="checklist">
+        <h2>Checklist</h2>
+        <ol>
+            <li>Manually restore NuGet packages for the project.</li>
+            <li>
+                Install <a href="https://visualstudiogallery.msdn.microsoft.com/8f2f2cbc-4da5-43ba-9de2-c9d08ade4941">NPM Task Runner</a>
+                This will allow you to run tasks described in package.json
+            </li>
+            <li>
+                Check npm version for Studio. Using NPM Task Runner execute "getNpmVersion" command from package.json
+                If it is higher then 3.X.X - all is ok. If not - see <a href="#npm_lw">"NPM version lower than 3"</a>chapter.
+            </li>
+
+            <li>
+                Check Node.JS version for Studio. Using NPM Task Runner execute "getNodeVersion" command from package.json
+                If it is higher then 5.X.X - all is ok. If not - see <a href="#ndj_lw">"Node.JS version lower than 5"</a> chapter.
+            </li>
+            <li>
+                If all is ok - run application and have fun. If smth wrong happened - go to the <a href="#trbl"> Troubleshooting"</a> chapter.
+            </li>
+        </ol>
+    </div>
+
+    <div class="section" id="trbl">
+        <h2>Troubleshooting</h2>
+        <ol>
+            <li>
+                <strong id="npm_lw">Problem: NPM version lower than 3</strong>
+                <p>
+                    <strong>Solution:</strong>
+                    Find the location where the global NPM was installed (you can execute the npm root -g command).
+                    Then substitute the pathway to Node NPM in the PATH environmental variable with the pathway to the global NPM.
+                    Do not forget to do it for the system and for the user, as well as to reboot your workstation.
+                </p>
+            </li>
+
+            <li>
+                <strong id="ndj_lw">Problem: Node.JS version lower than 5 </strong>
+                <p>
+                    <strong>Solution:</strong>
+                    Find the location, where your node.js is installed, and copy the path there.
+                    Now go to Tools -> Options -> Projects and Solutions -> External web tools and
+                    add a new path there which directs the Studio to the necessary node version
+                    (if there isn’t one, just download and install it).
+                    Don’t forget to bring the new path to the top. Restart the Studio
+                </p>
+            </li>
+
+            <li>
+                <strong id="inst_err">
+                    Problem: All package installing with errors.
+                </strong>
+                <p>
+                    <strong>Solution: </strong>
+                    Try command: "npm cache clear". This will remove all cached before packages and allows you to get clean and fresh
+                    latest packages.
+                </p>
+            </li>
+
+            <li>
+                <strong id="cmpl_err">
+                    Problem: VS throws compile error like: "TS2304: Cannot find name 'Map'".
+                </strong>
+                <p>
+                    <strong>Solution: </strong>
+                    Change TypeScript ECMAscript version to 6 version.
+                    You can find it at Project properties, TypeScript compile options.
+                </p>
+            </li>
+
+
+            <li>
+                <strong id="armgdn">
+                    Problem: Nothing works at all.
+                </strong>
+                <p>
+                    <strong>Solution: </strong>
+                    Try hard cache reset in Chrome. (This is not a joke, this can save a lot of time for you.)
+                    If you still have problems - try to install all from null.
+                </p>
+            </li>
+        </ol>
+    </div>
+
+    <div id="frm_nll" class="section info">
+        <h2>Install application from null manually</h2>
+
+        <ol>
+            <li>Install NPM Task Runner and Package Installer.</li>
+
+            <li>Create new empty web project.</li>
+
+            <li>
+                Add package.json file to the solution root with next content
+                <pre class="code">
+{
+ "name": "myproject",
+ "version": "1.0.0",
+ "devDependencies": {},
+ "scripts": {
+            "updateNpm": "npm install npm@latest"
+         }
+}
+                </pre>
+            </li>
+
+            <li>
+                Run "updateNpm" command from your taskrunner. Even if you have last npm - do this. It is important. If you have already installed Node.js before skip this step. If not - go the Node.js and install latest version of node.js. Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> External web tools and set a path to the proper node.js version. Do not forget to move your new path up the hill.
+            </li>
+
+            <li>
+                Update your package.json with dependencies, for angular 2. (With little overhead for the old browsers)
+                <pre class="code">
+{
+ "name": "myproject",
+ "version": "1.0.0",
+ "devDependencies": {
+   "gulp": "^3.9.1",
+   "typescript": "2.0.3",
+   "typings": "^1.0.4"
+ },
+  "dependencies": {
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/router": "3.0.0",
+    "@angular/upgrade": "2.0.0",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "0.19.27",
+    "zone.js": "^0.6.23",
+    "angular2-in-memory-web-api": "0.0.20",
+    "bootstrap": "^3.3.6"
+   },
+ "scripts": {
+    "postinstall": "typings install",
+    "typings": "typings",
+    "cmd": "npm typescript",
+    "getNpmVersion": "npm -v",
+    "getNodeVersion": "node -v"
+   }
+}            </pre>
+            </li>
+
+            <li> Run install command from the Task runner. Wait for installation. It can take up to 2-3 minutes</li>
+
+            <li>Create app folder in the root of your solution. Add app.components.ts file to the app folder.</li>
+
+            <li>
+                Configure typescript for Visual studio. Close your project and open .csproj file in the text editor.
+                Find PropertyGroup section and add two additional options:
+                <p class="code">
+                    &#60;TypeScriptExperimentalDecorators&#62;true&#60;/TypeScriptExperimentalDecorators&#62; <br />
+                    &#60;TypeScriptEmitDecoratorMetadata&#62;true&#60;/TypeScriptEmitDecoratorMetadata&#62;
+                </p>
+            </li>
+
+            <li>
+                Save changes and open solution.
+            </li>
+
+            <li>
+                Open your project properties and go to the TypeScript setting. Pick CommonJS as module system.
+            </li>
+
+            <li>
+                Update app.component.ts with this code.
+                <pre class="code">
+import { Component } from '@angular/core';
+@Component({
+    selector: 'my-app',
+    template: '&#60;h1&#62;My First Angular 2 App&#60;/h1&#62;'
+})
+export class AppComponent { }
+</pre>
+            </li>
+
+            <li>
+                Add main.ts to the app folder.
+                <pre class="code">
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule);
+</pre>
+            </li>
+
+            <li>
+                Add app.module.ts near the main.ts with the following code
+                <pre class="code">
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent }   from './app.component';
+@NgModule({
+    imports: [BrowserModule],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+</pre>
+            </li>
+
+
+            <li>
+                <pre class="code">
+Add index.html to the root of your project with next code:
+&#60;html&#62;
+    &#60;head&#62;
+        &#60;title&#62;Angular 2 QuickStart&#60;/title&#62;
+        &#60;meta charset="UTF-8"&#62;
+        &#60;meta name="viewport" content="width=device-width, initial-scale=1"&#62;
+        &#60;link rel="stylesheet" href="styles.css"&#62;
+        &#60;script src="node_modules/core-js/client/shim.min.js"&#62;&#60;/script&#62;
+        &#60;script src="node_modules/zone.js/dist/zone.js"&#62;&#60;/script&#62;
+        &#60;script src="node_modules/reflect-metadata/Reflect.js"&#62;&#60;/script&#62;
+        &#60;script src="node_modules/systemjs/dist/system.src.js"&#62;&#60;/script&#62;
+        &#60;!-- 2. Configure SystemJS --&#62;
+        &#60;script src="systemjs.config.js"&#62;&#60;/script&#62;
+        &#60;script&#62;
+            System.import('app').catch(function(err){ console.error(err); });
+        &#60;/script&#62;
+    &#60;/head&#62;
+    &#60;body&#62;
+        &#60;my-app&#62;Loading...&#60;/my-app&#62;
+    &#60;/body&#62;
+&#60;/html&#62;
+</pre>
+            </li>
+            <li>
+                Add systemjs.config.js to the root with next code.
+                <pre class="code">
+(function (global) {
+    System.config({
+        paths: {
+            // paths serve as alias
+            'npm:': 'node_modules/'
+        },
+        // map tells the System loader where to look for things
+        map: {
+            // our app is within the app folder
+            app: 'app',
+            // angular bundles
+            '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+            '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+            '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+            '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+            '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+            '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+            '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+            '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+            // other libraries
+            'rxjs': 'npm:rxjs',
+            'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+        },
+        // packages tells the System loader how to load when no filename and/or no extension
+        packages: {
+            app: {
+                main: './main.js',
+                defaultExtension: 'js'
+            },
+            rxjs: {
+                defaultExtension: 'js'
+            },
+            'angular2-in-memory-web-api': {
+                main: './index.js',
+                defaultExtension: 'js'
+            }
+        }
+    });
+})(this);
+</pre>
+            </li>
+            <li>
+                Press F5 to run your app. If you see My First Angular 2 App on your screen - all is ok. You can proceed developing.
+            </li>
+        </ol>
+    </div>
+
+    <footer>
+        <a href="#contents">UP</a>
+        Thanks for Angular 2.0 quick start help. Hello world, guys! 28.09.2016. Drag13.
+    </footer>
+
+</body>
+</html>
