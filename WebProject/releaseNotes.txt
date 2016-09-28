@@ -15,6 +15,9 @@ v.1.2.0
 v.1.3.0 
 	Moved from TypeScript 1.8 => 2.0
 	Updated NuGet dependencies. 
-	Removed NuGet auto-restoring.
+	Removed NuGet auto-restoring. [BUG]
 	Readme reworked.
+	Template for app.component moved to the separate file.
+	Css for app.component moved to the separate file.
+
 	

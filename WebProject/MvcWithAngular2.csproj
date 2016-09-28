@@ -70,6 +70,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.component.css" />
+    <Content Include="app\app.component.template.html" />
     <Content Include="Index.html" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
@@ -83,6 +85,7 @@
   <ItemGroup>
     <None Include="gulpfile.js" />
     <Content Include="readme.html" />
+    <Content Include="releaseNotes.txt" />
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />

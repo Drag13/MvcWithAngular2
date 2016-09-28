@@ -6,11 +6,9 @@ import {SecurityInfo} from './security/SecurityInfo';
 
 @Component({
     selector: 'my-app',
-    template: `<h1>My First Angular 2 App</h1>
-                <p>Hello user. You was authenticated with token: <span class="security-token">{{SecurityInfo.Token}}</span></p>
-                <p>All systems nominal </p>`,
+    templateUrl: '/app/app.component.template.html',
+    styleUrls: ['app/app.component.css'],
     providers: [SecurityService],
-    styles: ['.security-token{color:green}']
 })
 
 
