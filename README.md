@@ -168,3 +168,49 @@ export class AppModule { }
 </pre></li>
 <li>Press F5 to run your app. If you see My First Angular 2 App on your screen - all is ok. You can proceed developing.</li>
 </ol>
+
+<h2>Problems and solutions</h2>
+<ol><li>
+ <strong id="npm_lw">Problem: NPM version lower than 3</strong>
+                <p>
+                    <strong>Solution:</strong>
+                    Find the location where the global NPM was installed (you can execute the npm root -g command).
+                    Then substitute the pathway to Node NPM in the PATH environmental variable with the pathway to the global NPM.
+                    Do not forget to do it for the system and for the user, as well as to reboot your workstation.
+                </p>
+</li>
+ <li>
+                <strong id="ndj_lw">Problem: Node.JS version lower than 5 </strong>
+                <p>
+                    <strong>Solution:</strong>
+                    Find the location, where your node.js is installed, and copy the path there.
+                    Now go to Tools -> Options -> Projects and Solutions -> External web tools and
+                    add a new path there which directs the Studio to the necessary node version
+                    (if there isn’t one, just download and install it).
+                    Don’t forget to bring the new path to the top. Restart the Studio
+                </p>
+            </li>
+
+            <li>
+                <strong id="inst_err">
+                    Problem: All package installing with errors.
+                </strong>
+                <p>
+                    <strong>Solution: </strong>
+                    Try command: "npm cache clear". This will remove all cached before packages and allows you to get clean and fresh
+                    latest packages.
+                </p>
+            </li>
+
+            <li>
+                <strong id="cmpl_err">
+                    Problem: VS throws compile error like: "TS2304: Cannot find name 'Map'".
+                </strong>
+                <p>
+                    <strong>Solution: </strong>
+                    Change TypeScript ECMAscript version to 6 version.
+                    You can find it at Project properties, TypeScript compile options.
+                </p>
+            </li>
+
+</ol>
