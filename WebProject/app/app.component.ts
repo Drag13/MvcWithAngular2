@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
         this._securityService = securityService;
     }
 
-    //Class should not know about how to get data. It have only use them.
     private GetSecurity(): void {
         this._securityInfo = this._securityService.GetSecurity();
     }

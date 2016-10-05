@@ -61,28 +61,28 @@
         <h2>About</h2>
         This is the small web application developed to provide for you as much as possible pure angular 2 project working with MS Visual studio.
         Hope this helps you.
-        Please, report a issue to the <a href="https://github.com/Drag13/MvcWithAngular2/issues/new">GitHub</a> if any
+        Please, report a issue to the <a href="https://github.com/Drag13/MvcWithAngular2/issues/new">GitHub</a> if any.
     </div>
 
     <div class="section" id="checklist">
         <h2>Checklist</h2>
         <ol>
-            <li>Manually restore NuGet packages for the project.</li>
+            <li><b>Manually restore NuGet</b> packages for the project.</li>
             <li>
-                Install <a href="https://visualstudiogallery.msdn.microsoft.com/8f2f2cbc-4da5-43ba-9de2-c9d08ade4941">NPM Task Runner</a>
-                This will allow you to run tasks described in package.json
+                <b>Install</b> <a href="https://visualstudiogallery.msdn.microsoft.com/8f2f2cbc-4da5-43ba-9de2-c9d08ade4941">NPM Task Runner.</a>
+                This will allow you to run tasks described in package.json. Just right click on it for get access to the tool.
             </li>
             <li>
-                Check npm version for Studio. Using NPM Task Runner execute "getNpmVersion" command from package.json
+                <b>Check npm version for Studio</b>. Using NPM Task Runner execute "getNpmVersion" command from package.json.
                 If it is higher then 3.X.X - all is ok. If not - see <a href="#npm_lw">"NPM version lower than 3"</a>chapter.
             </li>
 
             <li>
-                Check Node.JS version for Studio. Using NPM Task Runner execute "getNodeVersion" command from package.json
+                <b>Check Node.JS version for Studio</b>. Using NPM Task Runner execute "getNodeVersion" command from package.json.
                 If it is higher then 5.X.X - all is ok. If not - see <a href="#ndj_lw">"Node.JS version lower than 5"</a> chapter.
             </li>
             <li>
-                If all is ok - run application and have fun. If smth wrong happened - go to the <a href="#trbl"> Troubleshooting"</a> chapter.
+                If all is ok - run application and have fun. If smth wrong happened - go to the <a href="#trbl"> Troubleshooting</a> chapter.
             </li>
         </ol>
     </div>
@@ -96,7 +96,7 @@
                     <strong>Solution:</strong>
                     Find the location where the global NPM was installed (you can execute the npm root -g command).
                     Then substitute the pathway to Node NPM in the PATH environmental variable with the pathway to the global NPM.
-                    Do not forget to do it for the system and for the user, as well as to reboot your workstation.
+                    <b>Don’t forget to do it for the system and for the user</b>, as well as to reboot your workstation.
                 </p>
             </li>
 
@@ -108,7 +108,7 @@
                     Now go to Tools -> Options -> Projects and Solutions -> External web tools and
                     add a new path there which directs the Studio to the necessary node version
                     (if there isn’t one, just download and install it).
-                    Don’t forget to bring the new path to the top. Restart the Studio
+                    <b>Don’t forget to bring the new path to the top</b>. Restart the Studio
                 </p>
             </li>
 
@@ -171,7 +171,7 @@
             </li>
 
             <li>
-                Run "updateNpm" command from your taskrunner. Even if you have last npm - do this. It is important. If you have already installed Node.js before skip this step. If not - go the Node.js and install latest version of node.js. Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> External web tools and set a path to the proper node.js version. Do not forget to move your new path up the hill.
+                Run "updateNpm" command from your taskrunner. Right click on package.json and execute updateNpm cmd. Even if you have last npm - do this. It is important. If you have already installed Node.js before skip this step. If not - go the Node.js and install latest version of node.js. Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> External web tools and set a path to the proper node.js version. <b>Do not forget to move your new path up the hill</b>.
             </li>
 
             <li>
