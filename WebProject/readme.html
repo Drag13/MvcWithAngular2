@@ -54,6 +54,7 @@
                 </ol>
             </li>
             <li> <a href="#frm_nll">Install application from null manually </a></li>
+            <li> <a href="#spa_iis">IIS settings for SPA application</a></li>
         </ol>
     </div>
 
@@ -347,9 +348,33 @@ Add index.html to the root of your project with next code:
         </ol>
     </div>
 
+    <div id="spa_iis" class="section info">
+        <h2>IIS settings for SPA application</h2>
+        <span>
+            Using app as SPA we have to configure IIS server to ignore requests except root and api.
+            This can be achieved with adding custom rule in web.config. Example of this you can find below.
+        </span>
+        <pre>
+    &#60;rewrite&#62;
+      &#60;rules&#62;&#60;
+        &#60;rule name="AngularJS Routes" stopProcessing="true"&#62;
+            &#60;match url=".*" /&#62;
+                &#60;conditions logicalGrouping="MatchAll"&#62;
+                 &#60;add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" /&#62;
+                 &#60;add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" /&#62;
+                 &#60;add input="{REQUEST_URI}" pattern="^/(api)" negate="true" /&#62;
+                 &#60;/conditions&#62;
+            &#60;action type="Rewrite" url="/" /&#62;
+        &#60;/rule&#62;
+      &#60;/rules&#62;
+    &#60;/rewrite&#62;
+</pre>
+        <span>More info can be find there: <a href="https://www.iis.net/learn/extensions/url-rewrite-module/creating-rewrite-rules-for-the-url-rewrite-module">IIS Url Rewrite Module</a></span>
+    </div>
+
     <footer>
         <a href="#contents">UP</a>
-        Thanks for Angular 2.0 quick start help. Hello world, guys! 28.09.2016. Drag13.
+        Thanks for Angular 2.0 quick start help. Hello world, guys! 06.10.2016. Drag13.
     </footer>
 
 </body>

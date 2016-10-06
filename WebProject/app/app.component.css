@@ -1,7 +1,17 @@
-﻿h1:first-letter {
+﻿h1 {
+    text-align:center;
+}
+
+h1:first-letter {
     color: red;
 }
 
-.security-token {
-    color: green;
+nav {
+    text-align:center;
 }
+
+    nav > a {
+        font-size:24px;
+        padding:16px;
+    }
+

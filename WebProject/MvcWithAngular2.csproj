@@ -72,9 +72,11 @@
   <ItemGroup>
     <Content Include="app\app.component.css" />
     <Content Include="app\app.component.template.html" />
+    <Content Include="app\personalCabinet\personalCabinet.component.template.html" />
     <Content Include="Index.html" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
+    <Content Include="app\dashboard\dashboard.component.template.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,6 +90,7 @@
     <Content Include="releaseNotes.txt" />
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />
+    <Content Include="TyList.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -99,10 +102,14 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
-    <TypeScriptCompile Include="app\app.security.service.ts" />
+    <TypeScriptCompile Include="app\app.routing.ts" />
+    <TypeScriptCompile Include="app\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
-    <TypeScriptCompile Include="app\security\SecurityInfo.ts" />
+    <TypeScriptCompile Include="app\personalCabinet\personalCabinet.component.ts" />
+    <TypeScriptCompile Include="app\usefullLinksService\link.ts" />
+    <TypeScriptCompile Include="app\usefullLinksService\usefullLink.service.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

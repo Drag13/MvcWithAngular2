@@ -1,0 +1,17 @@
+﻿<h2>Personal cabinet</h2>
+Hello!
+<p>
+    This is presonal cabinet page.
+    If you see this, than routing running fine.
+    Try to use dashboard link to check this.
+</p>
+<p>
+    If you see links, than <b>usefullLink.service</b> service working fine. Links should be clickable.
+</p>
+
+
+<ul>
+    <li *ngFor="let link of LinkList">
+       <a [href]="link.href">{{link.name}}</a>
+    </li>
+</ul>
