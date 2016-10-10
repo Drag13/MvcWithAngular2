@@ -3,7 +3,15 @@
 <h1>This is web project configured for working with angular 2.0 RELEASE and Microsoft Visual Studio 2015</h1>
 Short instruction how to run angular 2 with MS Visual Studio
 
-<h2>Check list</h2>
+<h2>Content</h2>
+<ol>
+<li>Check list</li>
+<li>Installing Angular2 from null</li>
+<li>Problems and solutions</li>
+<li>IIS settings for SPA application</li>
+</ol>
+
+<h2 id="#ch_l">Check list</h2>
 <ol>
  <li>Manually restore NuGet packages for the project.</li>
             <li>
@@ -214,3 +222,24 @@ export class AppModule { }
             </li>
 
 </ol>
+
+   <h2>IIS settings for SPA application</h2>
+         <p> Using app as SPA we have to configure IIS server to ignore requests except root and api.
+            This can be achieved with adding custom rule in web.config. Example of this you can find below.</p>
+        <pre>
+    &#60;rewrite&#62;
+      &#60;rules&#62;&#60;
+        &#60;rule name="AngularJS Routes" stopProcessing="true"&#62;
+            &#60;match url=".*" /&#62;
+                &#60;conditions logicalGrouping="MatchAll"&#62;
+                 &#60;add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" /&#62;
+                 &#60;add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" /&#62;
+                 &#60;add input="{REQUEST_URI}" pattern="^/(api)" negate="true" /&#62;
+                 &#60;/conditions&#62;
+            &#60;action type="Rewrite" url="/" /&#62;
+        &#60;/rule&#62;
+      &#60;/rules&#62;
+    &#60;/rewrite&#62;
+</pre>
+        <p>More info can be find here: <a href="https://www.iis.net/learn/extensions/url-rewrite-module/creating-rewrite-rules-for-the-url-rewrite-module">IIS Url Rewrite Module</a></p>
+  
