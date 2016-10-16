@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 
-import { Link } from '../usefullLinksService/link.ts';
+import { Link } from '../usefullLinksService/link';
 import { UsefullLinkService } from '../usefullLinksService/usefulllink.service';
 
 

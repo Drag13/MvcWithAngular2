@@ -12,6 +12,10 @@ const appRoutes: Routes = [
     {
         path: 'personal',
         component: PersonalCabinet
+    },
+    {
+        path: '**',  // otherwise route.
+        component: Dashboard
     }
 ];
 
