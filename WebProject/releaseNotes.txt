@@ -31,3 +31,7 @@ v.1.4.1
 	Fixed import with extension
 	Fixed studio typescript tool version.
 	Added otherwise routing
+
+v.1.4.2
+	Updated to Angular 2.1.1
+	Dependencies will not longer autoupdated.
