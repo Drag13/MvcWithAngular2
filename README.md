@@ -15,19 +15,14 @@ Short instruction how to run angular 2 with MS Visual Studio
 <ol>
  <li>Manually restore NuGet packages for the project.</li>
             <li>
-                Install <a href="https://visualstudiogallery.msdn.microsoft.com/8f2f2cbc-4da5-43ba-9de2-c9d08ade4941">NPM Task Runner.</a>
-                This will allow you to run tasks described in package.json
-            </li>
+                Install <a href="https://visualstudiogallery.msdn.microsoft.com/8f2f2cbc-4da5-43ba-9de2-c9d08ade4941">NPM Task Runner.</a> This will allow you to run tasks described in package.json </li>
             <li>
                 Check npm version for Studio. Using NPM Task Runner execute "getNpmVersion" command from package.json
-                If it is higher then 3.X.X - all is ok. If not - see <a href="#npm_lw">"NPM version lower than 3"</a>chapter from readme.html.
-            </li>
-
+                If it is higher then 3.X.X - all is ok. If not - see <a href="#npm_lw">"NPM version lower than 3"</a>chapter from readme.html.</li>
             <li>
                 Check Node.JS version for Studio. Using NPM Task Runner execute "getNodeVersion" command from package.json
-                If it is higher then 5.X.X - all is ok. If not - see <a href="#ndj_lw">"Node.JS version lower than 5"</a> chapter from readme.html.
-            </li>
-			 <li><b>IMPORTANT:</b>Run !install command from the task runner. For unknown reason taskrunner does not see angular files from VS so you should use this command. </li>
+                If it is higher then 5.X.X - all is ok. If not - see <a href="#ndj_lw">"Node.JS version lower than 5"</a> chapter from readme.html.</li>
+			 <li>IMPORTANT: Run !install command from the task runner. For unknown reason taskrunner does not see angular files from VS so you should use this command. </li>
             <li>
                 If all is ok - run application and have fun. If smth wrong happened - go to the <a href="#trbl"> Troubleshooting"</a> chapter.
             </li>
@@ -188,10 +183,9 @@ export class AppModule { }
                     Find the location where the global NPM was installed (you can execute the npm root -g command).
                     Then substitute the pathway to Node NPM in the PATH environmental variable with the pathway to the global NPM.
                     Do not forget to do it for the system and for the user, as well as to reboot your workstation.
-                </p>
-</li>
- <li>
-                <strong id="ndj_lw">Problem: Node.JS version lower than 5 </strong>
+                </p></li>
+		
+ <li><strong id="ndj_lw">Problem: Node.JS version lower than 5 </strong>
                 <p>
                     <strong>Solution:</strong>
                     Find the location, where your node.js is installed, and copy the path there.
@@ -222,9 +216,7 @@ export class AppModule { }
                     Change TypeScript ECMAscript version to 6 version.
                     You can find it at Project properties, TypeScript compile options.
                 </p>
-            </li>
-
-</ol>
+            </li></ol>
 
    <h2>IIS settings for SPA application</h2>
          <p> Using app as SPA we have to configure IIS server to ignore requests except root and api.
