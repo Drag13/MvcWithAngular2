@@ -2,29 +2,27 @@
   "name": "myproject",
   "repository": "https://github.com/Drag13/MvcWithAngular2",
   "license": "MIT",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "devDependencies": {
-    "typescript": "2.0.6",
-    "typings": "1.4.0"
+    "typescript": "2.2.2",
+    "typings": "2.1.1"
   },
 
   "dependencies": {
-    "@angular/common": "2.1.1",
-    "@angular/compiler": "2.1.1",
-    "@angular/core": "2.1.1",
-    "@angular/forms": "2.1.1",
-    "@angular/http": "2.1.1",
-    "@angular/platform-browser": "2.1.1",
-    "@angular/platform-browser-dynamic": "2.1.1",
-    "@angular/router": "3.1.1",
-    "@angular/upgrade": "2.1.1",
-    "core-js": "2.4.1",
-    "reflect-metadata": "0.1.8",
-    "rxjs": "5.0.0-rc.1",
+    "@angular/common": "~4.0.0",
+    "@angular/compiler": "~4.0.0",
+    "@angular/core": "~4.0.0",
+    "@angular/forms": "~4.0.0",
+    "@angular/http": "~4.0.0",
+    "@angular/platform-browser": "~4.0.0",
+    "@angular/platform-browser-dynamic": "~4.0.0",
+    "@angular/router": "~4.0.0",
+
+    "angular-in-memory-web-api": "~0.3.0",
     "systemjs": "0.19.40",
-    "zone.js": "0.6.26",
-    "angular2-in-memory-web-api": "0.0.21",
-    "bootstrap": "3.3.7"
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.8.4"
   },
 
   "scripts": {
@@ -33,6 +31,7 @@
     "cmd": "npm typescript",
     "getNpmVersion": "npm -v",
     "getNodeVersion": "node -v",
-    "updateNpm": "npm install npm@latest"
+    "updateNpm": "npm install npm@latest",
+    "!install": "npm install"
   }
 }
