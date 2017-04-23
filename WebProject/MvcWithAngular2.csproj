@@ -77,7 +77,6 @@
     <Content Include="package.json" />
     <Content Include="packages.config" />
     <Content Include="app\dashboard\dashboard.component.template.html" />
-    <Content Include="readme.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -87,7 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="gulpfile.js" />
-    <Content Include="readme.html" />
     <Content Include="releaseNotes.txt" />
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />

@@ -35,3 +35,6 @@ v.1.4.1
 v.1.4.2
 	Updated to Angular 2.1.1
 	Dependencies will not longer autoupdated.
+
+v.1.5.0
+	Updated to Angular 4.0.0

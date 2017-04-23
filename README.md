@@ -27,13 +27,14 @@ Short instruction how to run angular 2 with MS Visual Studio
                 Check Node.JS version for Studio. Using NPM Task Runner execute "getNodeVersion" command from package.json
                 If it is higher then 5.X.X - all is ok. If not - see <a href="#ndj_lw">"Node.JS version lower than 5"</a> chapter from readme.html.
             </li>
+			 <li><b>IMPORTANT:</b>Run !install command from the task runner. For unknown reason taskrunner does not see angular files from VS so you should use this command. </li>
             <li>
                 If all is ok - run application and have fun. If smth wrong happened - go to the <a href="#trbl"> Troubleshooting"</a> chapter.
             </li>
             <li>If you still have problems - try to install all from null.</li>
 </ol>
 
-<h2>Installing Angular 2.0 Release version for MS Visual Studio 2015 from null.</h2>
+<h2>Installing Angular <b>4.0</b> Release version for MS Visual Studio 2015 from null.</h2>
 <ol>
 <li>Install NPM Task Runner and Package Installer.</li>
 <li>Create new empty web project.</li>
@@ -57,30 +58,29 @@ Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> Exter
 <pre>
 {
   "name": "myproject",
-  "version": "1.0.0",
+  "repository": "https://github.com/Drag13/MvcWithAngular2",
+  "license": "MIT",
+  "version": "1.5.0",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "typescript": "2.0.3",
-    "typings": "^1.0.4"
+    "typescript": "2.2.2",
+    "typings": "2.1.1"
   },
 
   "dependencies": {
-    "@angular/common": "2.0.0",
-    "@angular/compiler": "2.0.0",
-    "@angular/core": "2.0.0",
-    "@angular/forms": "2.0.0",
-    "@angular/http": "2.0.0",
-    "@angular/platform-browser": "2.0.0",
-    "@angular/platform-browser-dynamic": "2.0.0",
-    "@angular/router": "3.0.0",
-    "@angular/upgrade": "2.0.0",
+    "@angular/common": "~4.0.0",
+    "@angular/compiler": "~4.0.0",
+    "@angular/core": "~4.0.0",
+    "@angular/forms": "~4.0.0",
+    "@angular/http": "~4.0.0",
+    "@angular/platform-browser": "~4.0.0",
+    "@angular/platform-browser-dynamic": "~4.0.0",
+    "@angular/router": "~4.0.0",
+
+    "angular-in-memory-web-api": "~0.3.0",
+    "systemjs": "0.19.40",
     "core-js": "^2.4.1",
-    "reflect-metadata": "^0.1.3",
-    "rxjs": "5.0.0-beta.12",
-    "systemjs": "0.19.27",
-    "zone.js": "^0.6.23",
-    "angular2-in-memory-web-api": "0.0.20",
-    "bootstrap": "^3.3.6"
+    "rxjs": "5.0.1",
+    "zone.js": "^0.8.4"
   },
 
   "scripts": {
@@ -88,9 +88,12 @@ Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> Exter
     "typings": "typings",
     "cmd": "npm typescript",
     "getNpmVersion": "npm -v",
-    "getNodeVersion": "node -v"
+    "getNodeVersion": "node -v",
+    "updateNpm": "npm install npm@latest",
+    "!install": "npm install"
   }
-}</pre></li>
+}
+</pre></li>
 
 <li>Run install command from the Task runner.</li>
 <li>Create app folder in the root of your solution. Add app.components.ts to the app folder.</li>
