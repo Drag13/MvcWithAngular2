@@ -184,7 +184,6 @@ export class AppModule { }
                     Then substitute the pathway to Node NPM in the PATH environmental variable with the pathway to the global NPM.
                     Do not forget to do it for the system and for the user, as well as to reboot your workstation.
                 </p></li>
-		
  <li><strong id="ndj_lw">Problem: Node.JS version lower than 5 </strong>
                 <p>
                     <strong>Solution:</strong>
@@ -195,7 +194,6 @@ export class AppModule { }
                     Don’t forget to bring the new path to the top. Restart the Studio
                 </p>
             </li>
-
             <li>
                 <strong id="inst_err">
                     Problem: All package installing with errors.
@@ -206,7 +204,6 @@ export class AppModule { }
                     latest packages.
                 </p>
             </li>
-
             <li>
                 <strong id="cmpl_err">
                     Problem: VS throws compile error like: "TS2304: Cannot find name 'Map'".
