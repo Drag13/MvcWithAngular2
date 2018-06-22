@@ -1,12 +1,12 @@
-# Angular2WebAppTemplate
+# AngularWebAppTemplate
 
-<h1>This is web project configured for working with angular 2.0 RELEASE and Microsoft Visual Studio 2015</h1>
-Short instruction how to run angular 2 with MS Visual Studio
+<h1>This is web project configured for working with angular 4.0 RELEASE and Microsoft Visual Studio 2015</h1>
+Short instruction how to run angular 4 with MS Visual Studio 2015
 
 <h2>Content</h2>
 <ol>
 <li>Check list</li>
-<li>Installing Angular2 from null</li>
+<li>Installing Angular from scratch</li>
 <li>Problems and solutions</li>
 <li>IIS settings for SPA application</li>
 </ol>
@@ -103,7 +103,7 @@ Inside Visual studio, go the Tools -> Options -> Projects and Solutions -> Exter
 import { Component } from '@angular/core';
 @Component({
     selector: 'my-app',
-    template: 'My First Angular 2 App'
+    template: 'My First Angular App'
 })
 export class AppComponent { }  </pre></li>
 
